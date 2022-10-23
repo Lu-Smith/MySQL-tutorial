@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fuzzy+Bubbles:wght@400;700&family=Nanum+Myeongjo&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +10,7 @@ body {
     text-align: center;
     background: #385170; 
     color: #ececec; 
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 main {
@@ -18,6 +21,8 @@ h1 {
     margin-bottom: 50px;
     font-size: 40px;
     line-height: 45px;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 4px;
 }
 
 section {
@@ -26,10 +31,13 @@ section {
     padding: 20px 30px 10px 30px;
     margin-bottom: 30px;
     color: #142d4c; ;
+    border: 4px solid #ececec;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
     margin-bottom: 20px;
+    font-family: 'Fuzzy Bubbles', cursive;
 }
 
 form {
@@ -48,6 +56,8 @@ input {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-style: italic;
 }
 
 button {
@@ -58,11 +68,13 @@ button {
     color:  #ececec; 
     border: none;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 .red {
     background-color: red;
-    margin: 0;
+    position: relative;
+    bottom: 40px;
 }
 
 .go-home {

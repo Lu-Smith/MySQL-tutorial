@@ -31,7 +31,7 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
         if (!$city && !$newcity) { 
         ?>
             <section>
-                <h2>Read Data</h2>
+                <h2>Find City</h2>
                 <form action="." method="GET">
                 <label for="city">
                     City Name
@@ -41,7 +41,7 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
                 </form>
             </section>
             <section>
-                <h2>Insert Data</h2>
+                <h2>Add new city</h2>
                 <form action="." method="POST">
                 <label for="newcity">
                     City Name
