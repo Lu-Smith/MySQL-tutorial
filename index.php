@@ -112,7 +112,28 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
                     id="city-<?php echo $id ?>" 
                     name="city" 
                     value="<?php echo $city ?>"
-                     required />
+                    required />
+                <label for="countrycode-<?php echo $id ?>">Country Code</label>
+                <input 
+                    type="text" 
+                    id="countrycode-<?php echo $id ?>" 
+                    name="countrycode" 
+                    value="<?php echo $countrycode ?>"
+                    required />
+                <label for="district-<?php echo $id ?>">District</label>
+                <input 
+                    type="text" 
+                    id="district-<?php echo $id ?>" 
+                    name="district" 
+                    value="<?php echo $district ?>"
+                    required />
+                <label for="population-<?php echo $id ?>">Population</label>
+                <input 
+                    type="text" 
+                    id="population-<?php echo $id ?>" 
+                    name="population" 
+                    value="<?php echo $population ?>"
+                    required />
                 <button class="green">Update</button>
              </form>
              <form class="delete" action="delete_record.php" method="POST">
