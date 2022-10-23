@@ -32,7 +32,7 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
         ?>
             <section>
                 <h2>Read Data</h2>
-                <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
+                <form action="." method="GET">
                 <label for="city">
                     City Name
                 </label>
@@ -42,7 +42,7 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
             </section>
             <section>
                 <h2>Insert Data</h2>
-                <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+                <form action="." method="POST">
                 <label for="newcity">
                     City Name
                 </label>
@@ -151,7 +151,7 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
         <?php
          }
         ?>
-        <a href="<?php echo $_SERVER['PHP_SELF'] ?>">Go to Request Forms</a>
+        <a class="go-home" href=".">Go to request forms</a>
         <?php
         } 
         ?>
