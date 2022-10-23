@@ -156,5 +156,9 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
         } 
         ?>
     </main>
+    <footer>
+         Coded by <a href="https://www.lunasmithart.com/" target="_blank" rel="noreferrer"> Luna Smith</a>, open-source on <a href="https://github.com/Lu-Smith/MySQL-tutorial" target="_blank" rel="noreferrer"> GitHub</a>.
+    </footer>
+</footer>
 </body>
 </html>
