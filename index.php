@@ -1,3 +1,11 @@
+<?php 
+$newcity = filter_input(INPUT_POST, "newcity", FILTER_UNSAFE_RAW);
+$countrycode = filter_input(INPUT_POST, "countrycode", FILTER_UNSAFE_RAW);
+$district = filter_input(INPUT_POST, "district", FILTER_UNSAFE_RAW);
+$population = filter_input(INPUT_POST, "population", FILTER_UNSAFE_RAW);
+
+$city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
