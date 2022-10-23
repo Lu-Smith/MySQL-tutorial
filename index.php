@@ -50,7 +50,7 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
                 <label for="countrycode">
                     Country Code 
                 </label>
-                <input type="text" id="countrycode" name="countrycode" required />
+                <input type="text" id="countrycode" name="countrycode" maxlength="3" required />
                 <label for="district">
                     District
                 </label>
@@ -105,8 +105,6 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
                 $countrycode = $result['CountryCode'];
                 $district = $result['District'];
                 $population = $result['Population'];
-             }
-
              ?>
              <form class="update" action="update_record.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id ?>" />
@@ -144,6 +142,7 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
                 <input type="hidden" name="id" value="<?php echo $id ?>" />
                 <button class="red">Delete</button>
              </form>
+             <?php } ?>
            </section>
         <?php
          } else {
