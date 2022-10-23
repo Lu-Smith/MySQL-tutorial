@@ -63,12 +63,12 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
         <?php 
         if ($newcity) {
            $query = "INSERT INTO city (Name, CountryCode, District, Population)
-                    VALUES (:newcity, :countrycode, :district, :population)";
+                    VALUES (:newcity, :countrycode, :district, :newpopulation)";
             $statement = $db->prepare($query);
             $statement->bindValue(':newcity', $newcity);
             $statement->bindValue(':countrycode', $countrycode);
             $statement->bindValue(':district', $district);
-            $statement->bindValue(':population', $population);
+            $statement->bindValue(':newpopulation', $newpopulation);
             $statement->execute();
             $statement->closeCursor();
         }
@@ -90,6 +90,42 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
         ?>
         <?php
         } 
+        ?>
+        <?php
+         if (!empty($results)) {
+        ?>
+           <section>
+             <h2>Update Data</h2>
+             <?php foreach ($results as $result) {
+                $id = $result['ID'];
+                $city = $result['Name'];
+                $countrycode = $result['District'];
+                $population = $result['Population'];
+             }
+
+             ?>
+             <form class="update" action="update_record.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $id ?>" />
+                <label for="city-<?php echo $id ?>">City Name</label>
+                <input 
+                    type="text" 
+                    id="city-<?php echo $id ?>" 
+                    name="city" 
+                    value="<?php echo $city ?>"
+                     required />
+                <button class="green">Update</button>
+             </form>
+             <form class="delete" action="delete_record.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $id ?>" />
+                <button class="red">Delete</button>
+             </form>
+           </section>
+        <?php
+         } else {
+        ?>
+           <p>Sorry, no results.</p>
+        <?php
+         }
         ?>
         
        
