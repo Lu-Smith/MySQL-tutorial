@@ -8,7 +8,7 @@ if ($id) {
               WHERE ID = :id';
     $statement = $db->prepare($query);
     $statement->bindValue(':id', $id);
-    $success = $statement->$execute();
+    $success = $statement->execute();
     $statement->closeCursor();
 }
 
