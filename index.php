@@ -55,7 +55,6 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
                <button>Submit</button>
             </form>
         </section>
-
         <?php
         } else {
         ?>
@@ -87,9 +86,6 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
             $results = $statement->fetchAll();
             $statement->closeCursor();
         }
-        ?>
-        <?php
-        } 
         ?>
         <?php
          if (!empty($results)) {
@@ -148,8 +144,10 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
         <?php
          }
         ?>
-        
-       
+        <a href="<?php echo $_SERVER['PHP_SELF'] ?>">Go to Request Forms</a>
+        <?php
+        } 
+        ?>
     </main>
 </body>
 </html>
