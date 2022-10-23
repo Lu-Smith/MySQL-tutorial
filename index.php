@@ -20,6 +20,9 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
         <header>
             <h1>PDO</h1>
         </header>
+        <?php
+        if (!$city && !$newcity) { 
+        ?>
         <section>
             <h2>Read Data</h2>
             <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
@@ -52,6 +55,44 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
                <button>Submit</button>
             </form>
         </section>
+
+        <?php
+        } else {
+        ?>
+        <?php require("database.php"); ?>
+        <?php 
+        if ($newcity) {
+           $query = "INSERT INTO city (Name, CountryCode, District, Population)
+                    VALUES (:newcity, :countrycode, :district, :population)";
+            $statement = $db->prepare($query);
+            $statement->bindValue(':newcity', $newcity);
+            $statement->bindValue(':countrycode', $countrycode);
+            $statement->bindValue(':district', $district);
+            $statement->bindValue(':population', $population);
+            $statement->execute();
+            $statement->closeCursor();
+        }
+
+        if ($city || $newcity) {
+            $query = 'SELECT * FROM city
+                       WHERE Name = :city
+                       ORDER BY Population DESC';
+            $statement = $db->prepare($query);
+            if ($city) {
+                $statement->bindValue(':city', $city);
+            } else {
+                $statement->bindValue(':city', $newcity);
+            }
+            $statement->execute();
+            $results = $statement->fetchAll();
+            $statement->closeCursor();
+        }
+        ?>
+        <?php
+        } 
+        ?>
+        
+       
     </main>
 </body>
 </html>
