@@ -9,7 +9,7 @@ $population = filter_input(INPUT_POST, 'population', FILTER_UNSAFE_RAW);
 
 if ($id) {
     $query = 'UPDATE city
-              SET Name = :city, CountryCOde = :countrycode, District = :district, Population = :population
+              SET Name = :city, CountryCode = :countrycode, District = :district, Population = :population
               WHERE ID = :id';
     $statement = $db->prepare($query);
     $statement->bindValue(':id', $id);

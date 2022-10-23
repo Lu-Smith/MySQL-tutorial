@@ -50,7 +50,7 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
                 <label for="countrycode">
                     Country Code 
                 </label>
-                <input type="text" id="countrycode" name="countrycode" maxlength="3" required />
+                <input type="text" id="countrycode" name="countrycode" required />
                 <label for="district">
                     District
                 </label>
