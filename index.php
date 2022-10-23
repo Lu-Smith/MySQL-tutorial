@@ -102,7 +102,8 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
              <?php foreach ($results as $result) {
                 $id = $result['ID'];
                 $city = $result['Name'];
-                $countrycode = $result['District'];
+                $countrycode = $result['CountryCode'];
+                $district = $result['District'];
                 $population = $result['Population'];
              }
 
