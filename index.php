@@ -21,6 +21,13 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
             <h1>PDO</h1>
         </header>
         <?php
+        if (isset($deleted)) {
+            echo "Record deleted.<br /><br />";
+        } else if(isset($updated)) {
+            echo "Record updated.<br /><br />";
+        }
+        ?>
+        <?php
         if (!$city && !$newcity) { 
         ?>
         <section>
