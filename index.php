@@ -151,7 +151,7 @@ $city = filter_input(INPUT_GET, "city", FILTER_UNSAFE_RAW);
         <?php
          }
         ?>
-        <a class="go-home" href=".">Go to request forms</a>
+        <a class="go-home" href=".">Go back to request forms</a>
         <?php
         } 
         ?>
